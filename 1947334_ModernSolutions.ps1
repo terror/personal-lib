@@ -22,8 +22,8 @@ foreach($letter in $message.ToCharArray()) {
 if($randomLetter.ToLower() -eq $letter) {
 $message = $message.replace($letter, $letter.ToString().ToUpper())
 $letterMatch = $letter
-Write-Host $message -ForegroundColor DarkRed -BackgroundColor White
 }
 }
+Write-Host $message -ForegroundColor DarkMagenta -BackgroundColor White
 Get-ChildItem -Path $path -Recurse -Filter "*$letterMatch*" | Remove-Item -WhatIf
 }
